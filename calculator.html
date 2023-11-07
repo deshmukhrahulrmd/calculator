@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Calculator</title>
+	<style type="text/css">
+		.calc{
+			background-color: black;
+			height: 535px;
+			width: 330px;
+			margin: 20% 30%;
+			border-radius: 50px;
+			padding: 20px;
+		}
+		input{
+			height: 70px;
+			width: 70px;
+			background-color: white;
+			color: black;
+			border:none;
+			border-radius: 15px;
+			margin: 4px;
+			font-weight: bolder;
+			transition-duration: 0.5s;
+			font-size: 25px;
+			cursor: text;
+
+		}
+		.operator{
+			background-color: navajowhite;
+			color: indianred;
+			font-size: 25px;
+			font-weight: bolder;
+		}
+		.operator:hover{
+			transform: scale(0.8);
+		}
+		.ac{
+			width: 150px;
+			margin-right: 7px;
+			font-size: 25px;
+		}
+		.op{
+			height: 120px;
+			width: 315px;
+			background-color: white;
+			border: 3px dotted gray;
+			text-align: right;
+			font-size: 40px;
+			font-weight: bolder;
+			margin: 7px;
+			margin-bottom: 15px;
+			box-shadow: 0px 0px 10px 2px ghostwhite;
+		}
+		#allclear{
+			background-color: indianred;
+		}
+		#eql:hover{
+			background-color: indianred;
+		}
+		input[type="button"]:hover{
+			transform: scale(0.9);
+			box-shadow: 0px 0px 5px indianred;
+			cursor: pointer;
+			opacity: 0.9;
+			box-shadow: 0px 0px 10px 1px indianred;
+		}
+	</style>
+</head>
+<body style="background: darkgrey; background-image: url('/https://i.gifer.com/Cwgf.gif'); background-size:cover;">
+
+	<div class="calc">
+		<form>
+			<div>
+				<input type="text" name="op" disabled class="op"><!--<span class="blinking-cursor">|</span>-->
+			</div>
+			<div>
+				<input type="button" value="AC" onclick="op.value=''" class="ac" id="allclear">
+				<input type="button" value="C" onclick="op.value=removelast(op.value)" class="operator">
+				<input type="button" value="%" onclick="op.value+='%'" class="operator">
+			</div>
+			<div>
+				<input type="button" value="7" onclick="op.value+='7'">
+				<input type="button" value="8" onclick="op.value+='8'">
+				<input type="button" value="9" onclick="op.value+='9'">
+				<input type="button" value="+" onclick="op.value+='+'" class="operator">
+			</div>
+			<div>
+				<input type="button" value="4" onclick="op.value+='4'">
+				<input type="button" value="5" onclick="op.value+='5'">
+				<input type="button" value="6" onclick="op.value+='6'">
+				<input type="button" value="-" onclick="op.value+='+'" class="operator">
+			</div>
+			<div>
+				<input type="button" value="1" onclick="op.value+='1'">
+				<input type="button" value="2" onclick="op.value+='2'">
+				<input type="button" value="3" onclick="op.value+='3'">
+				<input type="button" value="*" onclick="op.value+='*'" class="operator">
+			</div>
+			<div>
+				<input type="button" value="." onclick="op.value+='.'">
+				<input type="button" value="0" onclick="op.value+='0'">
+				<input type="button" value="=" onclick="op.value=eval(op.value)" id="eql">
+				<input type="button" value="/" onclick="op.value+='/'" class="operator">
+			</div>
+		</form>
+	</div>
+	<script type="text/javascript">
+		function removelast(string) {
+			return string.substring(0,string.length-1);
+		}
+	</script>
+</body>
+</html>
